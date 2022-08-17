@@ -1,21 +1,15 @@
-#ifndef RAWBLUETOOTH_SERVICE_H
-#define RAWBLUETOOTH_SERVICE_H
+#ifndef EWELINK_SERVICE_H
+#define EWELINK_SERVICE_H
 
 #include "MicroBitConfig.h"
 #include "MicroBitThermometer.h"
 #include "EventModel.h"
 #include "pxt.h"
 
-#define MICROBIT_ID_RAWBLUETOOTH       2300
-#define MICROBIT_RAWBLUETOOTH_EVT_RX   60
+#define MICROBIT_ID_EWELINK                 2301
+#define MICROBIT_EWELINK_EVT_ON_WRITTEN     60
 
-#define RAWBLUETOOTH_DATA_LENGTH       20
-
-// UUIDs for our service and characteristics
-extern const uint8_t RawBluetoothServiceUUID[];
-extern const uint8_t RawBluetoothRxCharacteristicUUID[];
-extern const uint8_t RawBluetoothTxCharacteristicUUID[];
-
+#define EWELINK_DATA_LENGTH                 20
 
 //================================================================
 #if MICROBIT_CODAL
@@ -24,20 +18,15 @@ extern const uint8_t RawBluetoothTxCharacteristicUUID[];
 #include "MicroBitBLEManager.h"
 #include "MicroBitBLEService.h"
 
-class RawBluetoothService : public MicroBitBLEService
+class EWeLinkService : public MicroBitBLEService
 {
 public:
     /**
      * Constructor.
-     * Create a representation of the RawBluetoothService
+     * Create a representation of the EWeLinkService
      * @param _ble The instance of a BLE device that we're running on.
      */
-    RawBluetoothService(BLEDevice &_ble);
-
-    /**
-     * Writes data
-     */
-    void write(const uint8_t *data, uint8_t len);
+    EWeLinkService(BLEDevice &_ble);
 
     /**
      * Read data
@@ -49,8 +38,8 @@ private:
     BLEDevice &ble;
 
     // memory for buffers.
-    uint8_t rxBuffer[RAWBLUETOOTH_DATA_LENGTH];
-    uint8_t txBuffer[RAWBLUETOOTH_DATA_LENGTH];
+    uint8_t rxBuffer[EWELINK_DATA_LENGTH];
+    uint8_t txBuffer[EWELINK_DATA_LENGTH];
 
     // received bytes
     uint8_t receivedBytes;
@@ -88,15 +77,20 @@ public:
 
 #include "ble/BLE.h"
 
-class RawBluetoothService
+// UUIDs for our service and characteristics
+extern const uint8_t EWeLinkServiceUUID[];
+extern const uint8_t EWeLinkRxCharacteristicUUID[];
+extern const uint8_t EWeLinkTxCharacteristicUUID[];
+
+class EWeLinkService
 {
 public:
     /**
      * Constructor.
-     * Create a representation of the RawBluetoothService
+     * Create a representation of the EWeLinkService
      * @param _ble The instance of a BLE device that we're running on.
      */
-    RawBluetoothService(BLEDevice &_ble);
+    EWeLinkService(BLEDevice &_ble);
 
     /**
      * Writes data
@@ -113,8 +107,8 @@ private:
     BLEDevice &ble;
 
     // memory for buffers.
-    uint8_t rxBuffer[RAWBLUETOOTH_DATA_LENGTH];
-    uint8_t txBuffer[RAWBLUETOOTH_DATA_LENGTH];
+    uint8_t rxBuffer[EWELINK_DATA_LENGTH];
+    uint8_t txBuffer[EWELINK_DATA_LENGTH];
 
     // received bytes
     uint8_t receivedBytes;

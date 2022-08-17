@@ -1,7 +1,7 @@
 {
-    "name": "pxt-raw-bluetooth",
-    "version": "1.0.1",
-    "description": "MakeCode bluetooth extension for raw data communication.",
+    "name": "pxt-eWeLink",
+    "version": "1.0.0",
+    "description": "MakeCode extension for eWeLink app.",
     "dependencies": {
         "core": "*"
     },
@@ -9,10 +9,10 @@
         "README.md",
         "shims.d.ts",
         "enums.d.ts",
-        "raw-bluetooth.cpp",
-        "raw-bluetooth.ts",
-        "RawBluetoothService.h",
-        "RawBluetoothService.cpp"
+        "e-welink.cpp",
+        "e-welink.ts",
+        "EWeLinkService.h",
+        "EWeLinkService.cpp"
     ],
     "testFiles": [
         "test.ts"
@@ -38,7 +38,7 @@
                     "advertising_timeout": 0,
                     "dfu_service": 0,
                     "event_service": 0,
-                    "device_info_service": 0,
+                    "device_info_service": 1,
                     "security_level": "SECURITY_MODE_ENCRYPTION_NO_MITM"
                 }
             }

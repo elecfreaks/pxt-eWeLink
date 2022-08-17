@@ -1,0 +1,14 @@
+{
+  "EWeLinkDirection.Down|block": "down",
+  "EWeLinkDirection.Left|block": "left",
+  "EWeLinkDirection.Right|block": "right",
+  "EWeLinkDirection.Stop|block": "stop",
+  "EWeLinkDirection.Up|block": "up",
+  "eWeLink.isConnected|block": "eWeLink is connected",
+  "eWeLink.isPressed|block": "eWeLink|%direction is pressed",
+  "eWeLink.onPressed|block": "on eWeLink|%direction pressed",
+  "eWeLink.setTransmitPower|block": "eWeLink|set transmit power %power",
+  "eWeLink.start|block": "eWeLink start",
+  "eWeLink|block": "eWeLink",
+  "{id:category}EWeLink": "EWeLink"
+}

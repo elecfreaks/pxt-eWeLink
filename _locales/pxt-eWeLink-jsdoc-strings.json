@@ -1,0 +1,11 @@
+{
+  "eWeLink": "Supports for eWeLink service.",
+  "eWeLink.isConnected": "Returns true if the service is connected.",
+  "eWeLink.isPressed": "Get eWeLink controller press state.",
+  "eWeLink.onPressed": "On eWeLink controller pressed.",
+  "eWeLink.readBuffer": "read buffer.",
+  "eWeLink.setTransmitPower": "Sets the bluetooth transmit power between 0 (minimal) and 7 (maximum).",
+  "eWeLink.setTransmitPower|param|power": "power level between 0 (minimal) and 7 (maximum), eg: 7.",
+  "eWeLink.start": "Starts service.",
+  "eWeLink.startService": "Starts the eWeLink service."
+}

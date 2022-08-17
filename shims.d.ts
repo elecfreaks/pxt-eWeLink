@@ -2,8 +2,8 @@
 
 
 
-    //% weight=50 icon="\uf294" color=#0055f4
-declare namespace rawbluetooth {
+    //% weight=50 icon="\uf1eb" color=#1976d2
+declare namespace eWeLink {
 }
 
 // Auto-generated. Do not edit. Really.

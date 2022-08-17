@@ -1,12 +1,12 @@
 #include "pxt.h"
 #include "MicroBit.h"
 #include "MicroBitConfig.h"
-#include "RawBluetoothService.h"
+#include "EWeLinkService.h"
 
-//% weight=50 icon="\uf294" color=#0055f4
-namespace rawbluetooth
+//% weight=50 icon="\uf1eb" color=#1976d2
+namespace eWeLink
 {
-    RawBluetoothService *pService = NULL;
+    EWeLinkService *pService = NULL;
     bool connected = false;
     bool nameScrolling = true;
 
@@ -50,7 +50,7 @@ namespace rawbluetooth
         uBit.messageBus.listen(MICROBIT_ID_BLE, MICROBIT_BLE_EVT_CONNECTED, onConnected);
         uBit.messageBus.listen(MICROBIT_ID_BLE, MICROBIT_BLE_EVT_DISCONNECTED, onDisconnected);
 
-        pService = new RawBluetoothService(*uBit.ble);
+        pService = new EWeLinkService(*uBit.ble);
 
         create_fiber(scrollFriendlyName);
     }
@@ -68,18 +68,9 @@ namespace rawbluetooth
     }
 
     //%
-    void writeBuffer(Buffer buffer)
-    {
-        if (!buffer)
-            return;
-
-        pService->write((uint8_t *)buffer->data, buffer->length);
-    }
-
-    //%
     Buffer readBuffer()
     {
-        auto buffer = mkBuffer(NULL, RAWBLUETOOTH_DATA_LENGTH);
+        auto buffer = mkBuffer(NULL, EWELINK_DATA_LENGTH);
         auto res = buffer;
         registerGCObj(buffer);
         uint8_t len = pService->read(buffer->data);
