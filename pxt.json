@@ -38,7 +38,7 @@
                     "advertising_timeout": 0,
                     "dfu_service": 0,
                     "event_service": 0,
-                    "security_level": null
+                    "security_level": "SECURITY_MODE_ENCRYPTION_OPEN_LINK"
                 }
             }
         },
